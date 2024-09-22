@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d86e35b043dc64e8a6fa64729862a6, type: 3}
+  m_Name: MenuWithInputElementsPrefabCreator
+  m_EditorClassIdentifier: 
+  createNewPrefabVariant: 1
+  menuLayoutPrefab: {fileID: 4562535640187994246, guid: e011c237bbfc1f949ad5cf61b2c4757e,
+    type: 3}
+  initializeInputElements: 1
+  settingsCollection: {fileID: 11400000, guid: 0dd6ac51bf15cd74e8903f79094a852b, type: 2}
+  addEditModeStyleProfileListening: 1
+  addApplyStyleProfileScript: 1
+  styleProfile: {fileID: 11400000, guid: e9db5dc8738490745b5b406512a74be7, type: 2}

@@ -1,0 +1,41 @@
+{
+    "name": "CitrioN.SettingsMenuCreator.Integrations.DLSS",
+    "rootNamespace": "",
+    "references": [
+        "GUID:cfac1490b1124fd4e99a26beaf1a860f",
+        "GUID:557e282a0a6c69144ac95b2c4c1923df",
+        "GUID:ee5df7fffe3b9b5429074cc8503d1844",
+        "GUID:8780fd9a74e568b4f9be410783774f94",
+        "GUID:ed28b16a94988a544960915d0bbcfcfe",
+        "GUID:d60799ab2a985554ea1a39cd38695018"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "CITRION_COMMON",
+        "SETTINGS_MENU_CREATOR",
+        "TND_DLSS"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.citrion.common",
+            "expression": "1.1",
+            "define": "CITRION_COMMON"
+        },
+        {
+            "name": "com.citrion.settings-menu-creator",
+            "expression": "1.1",
+            "define": "SETTINGS_MENU_CREATOR"
+        },
+        {
+            "name": "com.unity.postprocessing",
+            "expression": "3.4",
+            "define": "UNITY_POST_PROCESSING_STACK_V2"
+        }
+    ],
+    "noEngineReferences": false
+}
