@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 741333535007149608}
   - component: {fileID: 4754542857540272993}
   - component: {fileID: 753925169181551450}
+  - component: {fileID: -455329074449942179}
   m_Layer: 0
   m_Name: m1911
   m_TagString: Untagged
@@ -278,3 +279,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-455329074449942179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190087048756994910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450f3d31c49548f4ea8a883463fee41d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 6190087048756994910}
+  Ammo: 0
+  Damage: 0
+  weaponType: 
+  weaponData: {fileID: 11400000, guid: 04aa7bd026e00bf4891b716a57993a38, type: 2}
+  fireRate: 0.5
+  lifeTime: 1
+  bulletSpeed: 100
+  FireSound: {fileID: 8300000, guid: 4fdc770f564ba64498a07f22e668f07e, type: 3}

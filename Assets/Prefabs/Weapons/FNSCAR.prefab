@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2077212495220186940}
   - component: {fileID: 8896901725046603109}
   - component: {fileID: 3155589939609825774}
+  - component: {fileID: 5518332717344909422}
   m_Layer: 0
   m_Name: FNSCAR
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2458316934875381828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -278,3 +279,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5518332717344909422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458316934875381828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450f3d31c49548f4ea8a883463fee41d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 2458316934875381828}
+  Ammo: 0
+  Damage: 0
+  weaponType: 
+  weaponData: {fileID: 11400000, guid: 93c0c92ce6f74204ea43204a682e099f, type: 2}
+  fireRate: 0.2
+  lifeTime: 1
+  bulletSpeed: 150
+  FireSound: {fileID: 8300000, guid: 610dcae092f746a439bf356395b2cb71, type: 3}

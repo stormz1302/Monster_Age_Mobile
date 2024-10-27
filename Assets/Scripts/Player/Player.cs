@@ -6,35 +6,33 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public Animator animator;
-    public Rigidbody2D rb;
     private float speed;
 
-    public WeaponManager weaponManager; // Tham chiếu đến WeaponManager
-    public JoystickPlayerExample joystick; // Tham chiếu đến JoystickPlayerExample
-    public GameObject Weapons;
+    private WeaponManager weaponManager; // Tham chiếu đến WeaponManager
+    private JoystickPlayerExample joystick; // Tham chiếu đến JoystickPlayerExample
+    private GameObject Weapon;
     public float MeleeTime = 0.25f;
 
     public float dashCooldown = 2f;
     private float _dashCooldown;
 
     public bool isDashing = false;
-    public Image DashImage;
-    public float dashSpeed = 200f;
+    public float dashSpeed = 50f;
     public float dashTime = 0.1f;
     private float _dashTime;
+    public string CharacterName;
 
-   
     void Start()
     {
-        animator = GetComponent<Animator>();
+        joystick = FindObjectOfType<JoystickPlayerExample>();
+        weaponManager = FindObjectOfType<WeaponManager>();
     }
 
-    
     void Update()
     {
-        speed = rb.velocity.magnitude;
+        speed = joystick.rb.velocity.magnitude;
         animator.SetFloat("Speed", speed);
-        
+
         //giảm speed khi dash
         if (isDashing && Time.time >= _dashTime)
         {
@@ -48,51 +46,61 @@ public class Player : MonoBehaviour
     public void AttackMelee()
     {
         animator.SetBool("Melee", true);
+        Sword sword = FindObjectOfType<Sword>();
+        sword.OnAttackButtonClicked();
     }
-    
-    
+
+
     public void DashButton()
     {
-        
+
         if (Time.time >= _dashCooldown)
         {
-            StartCoroutine(FillDashImage());
             _dashCooldown = Time.time + dashCooldown;
             animator.SetBool("Dash", true);
             Dash();
         }
     }
 
-    IEnumerator FillDashImage()
-    {
-        float elapsedTime = 0f;
-        DashImage.fillAmount = 0f;
-        float startFillAmount = DashImage.fillAmount;
 
-        while (elapsedTime < dashCooldown)
-        {
-            elapsedTime += Time.deltaTime;
-            float fillAmount = Mathf.Lerp(startFillAmount, 1f, elapsedTime / dashCooldown);
-            DashImage.fillAmount = fillAmount;
-            yield return null;
-        }
 
-        DashImage.fillAmount = 1f; // Đảm bảo rằng giá trị cuối cùng là 1
-    }
     private void Dash()
     {
         if (!isDashing)
         {
-            joystick.speed += dashSpeed; 
+            joystick.speed += dashSpeed;
             _dashTime = Time.time + dashTime;
-            isDashing = true; 
+            isDashing = true;
         }
-        
+
     }
+
 
     public void backMelee()
     {
         animator.SetBool("Melee", false);
-        
+
     }
+
+    public void DisableWeapon()
+    {
+        Weapon = weaponManager.currentWeapon;
+        Weapon.SetActive(false);
+    }
+
+    public void CollectItem(Item item)
+    {
+        switch (item.itemType)
+        {
+            case Item.ItemType.Health:
+                PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+                playerHealth.Heal(item.value);
+                break;
+            case Item.ItemType.Ammo:
+                weaponManager.AddAmmo(item.value);
+                break;
+        }
+    }
+
+
 }

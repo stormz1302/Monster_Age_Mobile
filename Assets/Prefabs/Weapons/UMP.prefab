@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8130018149540916137}
   - component: {fileID: 5444461238850634562}
   - component: {fileID: 8840092311043567041}
+  - component: {fileID: 5645369621998012321}
   m_Layer: 0
   m_Name: UMP
   m_TagString: Untagged
@@ -278,3 +279,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5645369621998012321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761523535335675738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450f3d31c49548f4ea8a883463fee41d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 8761523535335675738}
+  Ammo: 0
+  Damage: 0
+  weaponType: 
+  weaponData: {fileID: 11400000, guid: eb3a7ebadf4b78c428890c481e8cdbcd, type: 2}
+  fireRate: 0.1
+  lifeTime: 1
+  bulletSpeed: 150
+  FireSound: {fileID: 8300000, guid: 5dc87f0b78529284e823a7998c211cd7, type: 3}

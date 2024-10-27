@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7810108384631638344}
   - component: {fileID: 2798030318250642176}
   - component: {fileID: 156521480672744689}
+  - component: {fileID: -8878289573265313795}
   m_Layer: 0
   m_Name: glock
   m_TagString: Untagged
@@ -278,3 +279,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8878289573265313795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3240810592356681934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450f3d31c49548f4ea8a883463fee41d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 3240810592356681934}
+  Ammo: 0
+  Damage: 0
+  weaponType: 
+  weaponData: {fileID: 11400000, guid: 8f20b241c2996cf4f9fe1fe27b05ee7c, type: 2}
+  fireRate: 0.5
+  lifeTime: 1
+  bulletSpeed: 100
+  FireSound: {fileID: 8300000, guid: 9266f610d6b7daf4dbbd53a3625ab33c, type: 3}

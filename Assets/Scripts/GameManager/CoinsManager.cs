@@ -5,24 +5,32 @@ using TMPro;
 
 public class CoinsManager : MonoBehaviour
 {
-    private const string COIN_KEY = "Coins";
-    public TMP_Text coinsText;
+    private const string COIN_KEY = "PlayerCurrency";
+    [SerializeField] private TMP_Text coinsText;
+    [SerializeField] private TMP_Text coinsTextShop;
+
+    public void Start()
+    {
+        int coins = LoadCoins();
+        if (coins == 0)
+            SaveCoins(100000);
+    }
 
     private void Update()
     {
         CoinsDisplay();
     }
-    // Lưu trữ coins vào PlayerPrefs
+    
     public void SaveCoins(int coins)
     {
         PlayerPrefs.SetInt(COIN_KEY, coins);
-        PlayerPrefs.Save(); // Ghi dữ liệu xuống bộ nhớ
+        PlayerPrefs.Save(); 
     }
 
-    // Lấy số lượng coins từ PlayerPrefs
+   
     public int LoadCoins()
     {
-        return PlayerPrefs.GetInt(COIN_KEY, 0); // Trả về 0 nếu chưa có dữ liệu
+        return PlayerPrefs.GetInt(COIN_KEY, 0); 
     }
 
     public void AddCoins(int coins)
@@ -41,6 +49,8 @@ public class CoinsManager : MonoBehaviour
 
     private void CoinsDisplay()
     {
-        coinsText.text = LoadCoins().ToString();
+        int coins = LoadCoins();
+        coinsText.text = coins.ToString();
+        coinsTextShop.text = coins.ToString();
     }
 }

@@ -17,17 +17,21 @@ public class WeaponsUI : MonoBehaviour
     public TextMeshProUGUI AmmoText1;
     public TextMeshProUGUI AmmoText2;
 
-    public void Start()
-    {
-        UpdateWeaponsUI();
-        
-    }
+    public Transform weapon1;
+    public Transform weapon2;
 
-    private void UpdateWeaponsUI()
+
+    //private void Start()
+    //{
+    //    UpdateWeaponsUI();
+    //}
+
+    public void UpdateWeaponsUI()
     {
         Transform weapon1 = weaponManager.weaponSlot1.transform.GetChild(0);
         Transform weapon2 = weaponManager.weaponSlot2.transform.GetChild(0);
-
+        Debug.Log("WeaponUI: " + weapon1);
+        Debug.Log("WeaponUI: " + weapon2);
         if (weapon1 != null )
         {
             ImageWeapon1.sprite = weapon1.GetComponent<SpriteRenderer>().sprite;
@@ -45,8 +49,6 @@ public class WeaponsUI : MonoBehaviour
         
         AmmoText1.text = currentAmmo1.ToString();
         AmmoText2.text = currentAmmo2.ToString();
-        
-        
 
     }
 }

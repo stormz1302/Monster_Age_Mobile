@@ -7,6 +7,8 @@ TagManager:
   - Sniper
   - Pistol
   - ShotGun
+  - Enemy
+  - Helicopter
   layers:
   - Default
   - TransparentFX

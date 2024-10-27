@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3300908453757574111}
   - component: {fileID: 8086458589774326205}
   - component: {fileID: 146876164887703461}
+  - component: {fileID: -4508360439344239078}
   m_Layer: 0
   m_Name: TMP
   m_TagString: Untagged
@@ -278,3 +279,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4508360439344239078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6928891458997903864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450f3d31c49548f4ea8a883463fee41d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 6928891458997903864}
+  Ammo: 0
+  Damage: 0
+  weaponType: 
+  weaponData: {fileID: 11400000, guid: 1875cf17c68828042b4ecbb1c6038738, type: 2}
+  fireRate: 0.1
+  lifeTime: 1
+  bulletSpeed: 150
+  FireSound: {fileID: 8300000, guid: 5dc87f0b78529284e823a7998c211cd7, type: 3}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 973642481290459171}
   - component: {fileID: 2660737840347295460}
   - component: {fileID: 7193476731907554688}
+  - component: {fileID: -4355533600413692534}
   m_Layer: 0
   m_Name: MP5
   m_TagString: Untagged
@@ -278,3 +279,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4355533600413692534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309989427952861724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450f3d31c49548f4ea8a883463fee41d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 2309989427952861724}
+  Ammo: 0
+  Damage: 0
+  weaponType: 
+  weaponData: {fileID: 11400000, guid: d1594b9d2d3dfac47b1fd43c6ac928af, type: 2}
+  fireRate: 0.2
+  lifeTime: 1
+  bulletSpeed: 140
+  FireSound: {fileID: 8300000, guid: 5dc87f0b78529284e823a7998c211cd7, type: 3}

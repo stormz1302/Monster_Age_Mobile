@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b3b07feaa9467488085e698f6a4b4e, type: 3}
+  m_Name: ShotGun3
+  m_EditorClassIdentifier: 
+  weaponName: Shotgun 3
+  weaponType: Shotgun
+  Price: 4000
+  icon: {fileID: 21300000, guid: cc47da15cd68b764980141ab41b5f632, type: 3}
+  Damage: 200
+  Clip: 60
+  Level: 0
+  isEquipped: 0
+  isOwned: 0
+  prefab: {fileID: 1728898738259043611, guid: 36817ecfc5233ed46aa2019717befd6f, type: 3}

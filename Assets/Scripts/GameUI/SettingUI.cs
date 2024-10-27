@@ -16,7 +16,9 @@ public class SettingUI : MonoBehaviour
     [SerializeField] private Sprite SoundOn;
     [SerializeField] private Sprite SoundOff;
 
-    // Start is called before the first frame update
+
+    
+
     void Start()
     {
         // Đặt giá trị của Slider theo giá trị hiện tại của AudioMixer
@@ -70,7 +72,6 @@ public class SettingUI : MonoBehaviour
     
     public void SoundButton()
     {
-        volumeButton(soundsMixer, soundsSlider);
         if (SoundsOn)
         {
             soundsButton.GetComponent<Image>().sprite = SoundOff;
@@ -79,10 +80,10 @@ public class SettingUI : MonoBehaviour
         {
             soundsButton.GetComponent<Image>().sprite = SoundOn;
         }
+        volumeButton(soundsMixer, soundsSlider);
     }
     public void MusicButton()
     {
-        volumeButton(musicMixer, musicSlider);
         if (SoundsOn)
         {
             musicButton.GetComponent<Image>().sprite = SoundOff;
@@ -91,5 +92,7 @@ public class SettingUI : MonoBehaviour
         {
             musicButton.GetComponent<Image>().sprite = SoundOn;
         }
+        volumeButton(musicMixer, musicSlider);
     }
+
 }

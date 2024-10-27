@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b3b07feaa9467488085e698f6a4b4e, type: 3}
+  m_Name: m1911
+  m_EditorClassIdentifier: 
+  weaponName: m1911
+  weaponType: Pistol
+  Price: 2000
+  icon: {fileID: 21300000, guid: 3755ce56a25123b4487fe7eb4f59a431, type: 3}
+  Damage: 102
+  Clip: 160
+  Level: 0
+  isEquipped: 0
+  isOwned: 0
+  prefab: {fileID: 6190087048756994910, guid: ff318a2260c4a2940bb23dbfecaf3fe7, type: 3}

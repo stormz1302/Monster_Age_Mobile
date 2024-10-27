@@ -800,6 +800,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4434242099123266}
   - component: {fileID: 212558062782895050}
+  - component: {fileID: 45832475510403265}
+  - component: {fileID: 304607512089192755}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -874,6 +876,87 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &45832475510403265
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436436276764480}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 1}
+    oldSize: {x: 4, y: 1.28}
+    newSize: {x: 4, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.9599998, y: -0.58}
+      - {x: 3.9299998, y: -0.53999996}
+      - {x: 3.6699998, y: -0.42}
+      - {x: 1.4, y: -0.42999998}
+      - {x: 1.48, y: -0.26999998}
+      - {x: 1.43, y: -0.03}
+      - {x: 1.39, y: 0}
+      - {x: 1.0699999, y: 0}
+      - {x: 0.89, y: -0.089999996}
+      - {x: 0.98999995, y: -0.45999998}
+      - {x: 0.19, y: -0.41}
+      - {x: 0.04, y: -0.45}
+      - {x: 0.04, y: -0.88}
+      - {x: 0.95, y: -1.02}
+      - {x: 0.97999996, y: -1.1899999}
+      - {x: 1.1, y: -1.28}
+      - {x: 1.36, y: -1.28}
+      - {x: 1.49, y: -1.25}
+      - {x: 1.43, y: -0.87}
+      - {x: 3.7099998, y: -0.85999995}
+      - {x: 3.9599998, y: -0.72999996}
+  m_UseDelaunayMesh: 0
+--- !u!114 &304607512089192755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436436276764480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ceadcb78316974bbd98ab87032f586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 150
+  attackCooldown: 1
+  swordCollider: {fileID: 45832475510403265}
 --- !u!1 &1512915964865000
 GameObject:
   m_ObjectHideFlags: 0

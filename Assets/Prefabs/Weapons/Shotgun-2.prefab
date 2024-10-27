@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7421152813499415558}
   - component: {fileID: 486937745121828128}
   - component: {fileID: 1304920015051336286}
+  - component: {fileID: -2559354831780065616}
   m_Layer: 0
   m_Name: Shotgun-2
   m_TagString: Untagged
@@ -278,3 +279,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2559354831780065616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179627819848572190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450f3d31c49548f4ea8a883463fee41d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 5179627819848572190}
+  Ammo: 0
+  Damage: 0
+  weaponType: 
+  weaponData: {fileID: 11400000, guid: 0c3a0ea1a174b1d4894da971503510f5, type: 2}
+  fireRate: 0.8
+  lifeTime: 0.1
+  bulletSpeed: 200
+  FireSound: {fileID: 8300000, guid: 280c9c5a7c683d7bc8b3baaec8800f03, type: 3}

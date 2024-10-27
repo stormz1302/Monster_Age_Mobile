@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4406922214602960061}
   - component: {fileID: 4000359885456766430}
   - component: {fileID: 238041253398900626}
+  - component: {fileID: 6635387873409245554}
   m_Layer: 0
   m_Name: AWM
-  m_TagString: Untagged
+  m_TagString: Sniper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1410076885096315876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -278,3 +279,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6635387873409245554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410076885096315876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450f3d31c49548f4ea8a883463fee41d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 1410076885096315876}
+  Ammo: 50
+  Damage: 0
+  weaponType: 
+  weaponData: {fileID: 11400000, guid: 63a2348fd836bba468310521e7d0d8aa, type: 2}
+  fireRate: 1
+  lifeTime: 0.5
+  bulletSpeed: 200
+  FireSound: {fileID: 8300000, guid: b217f3cbe2160194ca4069fe3bc1d29e, type: 3}

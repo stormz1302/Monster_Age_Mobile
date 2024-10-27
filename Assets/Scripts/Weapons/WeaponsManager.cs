@@ -11,8 +11,8 @@ public class WeaponManager : MonoBehaviour
     public GameObject weaponSlot1; // Vũ khí trong slot 1
     public GameObject weaponSlot2; // Vũ khí trong slot 2
     public Transform Player;
-    private GameObject currentWeapon; // Vũ khí hiện tại đang sử dụng
-
+    [HideInInspector]public GameObject currentWeapon; // Vũ khí hiện tại đang sử dụng
+    
     public Animator animator;
     
     public GameObject bulletPrefab; // Prefab của đạn
@@ -34,20 +34,18 @@ public class WeaponManager : MonoBehaviour
     public WeaponsUI weaponsUI;
     public Weapon weapon;
 
+    private float holdGunTime;
     private float nextFireTime = 0f; // Thời gian bắn đạn tiếp theo
+    Transform weapon1;
+    Transform weapon2;
 
 
     // Khởi tạo vũ khí mặc định hoặc chỉ định vũ khí cho các slot
     private void Start()
     {
-        Transform weapon1 = weaponSlot1.transform.GetChild(0);
-        Transform weapon2 = weaponSlot2.transform.GetChild(0);
+        
 
-
-        string weaponType1 = weapon1.gameObject.name;
-        Ammo1 = weapon1.GetComponent<Weapon>().Ammo;
-        Ammo2 = weapon2.GetComponent<Weapon>().Ammo;
-        string weaponType2 = weapon2.gameObject.name;
+        
         if (weapon1 != null)
         {
             weaponSlot1.SetActive(true); // Chọn vũ khí cho slot 1
@@ -69,15 +67,25 @@ public class WeaponManager : MonoBehaviour
         animator = GetComponent<Animator>();
         FireSound = GetComponent<AudioSource>();
 
-        AwakeAmmoUI();
+ 
 
         CheckWeaponType();
+    }
+
+    public void UpdateWeapons()
+    {
+        weapon1 = weaponSlot1.transform.GetChild(0);
+        weapon2 = weaponSlot2.transform.GetChild(0);
+        Ammo1 = weapon1.GetComponent<Weapon>().Ammo;
+        Debug.Log(Ammo1);
+        Ammo2 = weapon2.GetComponent<Weapon>().Ammo;
+        AwakeAmmoUI();
     }
 
     // Hàm chuyển đổi vũ khí
     private void SwitchWeapon(int slot)
     {
-       
+        
         // Tắt vũ khí hiện tại
         if (currentWeapon != null)
         {
@@ -117,6 +125,22 @@ public class WeaponManager : MonoBehaviour
     // Function fire weapon
     private void FireBullet(Quaternion rotation)
     {
+        if (_Fire == Sniper) // Chỉ trừ đạn sau khi bắn Sniper
+        {
+            if (currentWeapon == weaponSlot1)
+            {
+                Ammo1 -= 1;
+                weaponsUI.currentAmmo1 = Ammo1;
+            }
+            else if (currentWeapon == weaponSlot2)
+            {
+                Ammo2 -= 1;
+                weaponsUI.currentAmmo2 = Ammo2;
+            }
+            Ammo -= 1;
+            weaponsUI.UpdateAmmoUI();
+        }
+
         nextFireTime = Time.time + fireRate;
         FireSound.Play(); // Phát âm thanh bắn đạn
         Quaternion fProtaion = Quaternion.Euler(0, 0, 0);
@@ -191,6 +215,7 @@ public class WeaponManager : MonoBehaviour
 
     private void Sniper()
     {
+        Debug.Log("Sniper fire");
         animator.SetBool("Sniper", true); 
     }
 
@@ -210,10 +235,11 @@ public class WeaponManager : MonoBehaviour
             // Lấy tên của Sprite
             if (weapon != null)
             {
-                string weaponType = Weapon.tag;
+                string weaponType = Weapon.GetComponent<Weapon>().weaponType;
+                Debug.Log("weaponType: " + weaponType);
                 switch (weaponType)
                 {
-                    case "ShotGun":
+                    case "Shotgun":
                         _Fire = ShotGun;
                         Debug.Log("Shotgun");
                         break;
@@ -238,47 +264,50 @@ public class WeaponManager : MonoBehaviour
     private MyDelegate _Fire;
     public void Fire()
     {
-        
 
-        if (Ammo > 0)
+
+        if (Ammo > 0 || _Fire == Sniper) // Sniper vẫn có thể bắn lần đầu nếu có đạn
         {
-            if (currentWeapon == weaponSlot1)
+            if (_Fire != Sniper && currentWeapon == weaponSlot1)
             {
                 Ammo1 -= 1;
                 weaponsUI.currentAmmo1 = Ammo1;
             }
-            else if (currentWeapon == weaponSlot2)
+            else if (_Fire != Sniper && currentWeapon == weaponSlot2)
             {
                 Ammo2 -= 1;
                 weaponsUI.currentAmmo2 = Ammo2;
             }
+
             Ammo -= 1;
+
             if (_Fire != null)
             {
                 if (_Fire != Sniper && Time.time >= nextFireTime)
                 {
                     Firing = true;
                     animator.SetTrigger("Fire");
+                    StartCoroutine(FireRepeatedly()); // Bắt đầu bắn liên tục nếu không phải Sniper
                 }
-                else
+                else if (_Fire == Sniper)
                 {
                     holdGun = true;
+                    holdGunTime = Time.time + 1f;
+                    _Fire(); // Bắn một lần cho Sniper
                 }
-                StartCoroutine(FireRepeatedly());
+                Debug.Log("Fire1");
             }
             else
             {
                 Debug.LogWarning("No firing method assigned.");
             }
-
         }
         else
         {
             FireSound.clip = outAmmoClip;
             FireSound.Play();
         }
-        
-        
+
     }
 
     private IEnumerator FireRepeatedly()
@@ -286,7 +315,7 @@ public class WeaponManager : MonoBehaviour
         while (Firing == true)
         {
             _Fire();
-
+            
             yield return new WaitForSeconds(0f);
         }
     }
@@ -297,7 +326,10 @@ public class WeaponManager : MonoBehaviour
         
         if (_Fire == Sniper)
         {
-            Shoot();
+            if (Time.time >= holdGunTime)
+            {
+                Shoot();
+            }
             holdGun = false;
             animator.speed = 1;
             animator.SetBool("Sniper", false);
@@ -312,5 +344,20 @@ public class WeaponManager : MonoBehaviour
             
         }
          Debug.Log("Stop fire");
+    }
+
+    public void AddAmmo(int amountAmmo)
+    {
+        if(currentWeapon == weaponSlot1)
+        {
+            Ammo1 += amountAmmo;
+            weaponsUI.currentAmmo1 = Ammo1;
+        }
+        else if (currentWeapon == weaponSlot2)
+        {
+            Ammo2 += amountAmmo;
+            weaponsUI.currentAmmo2 = Ammo2;
+        }
+        weaponsUI.UpdateAmmoUI();
     }
 }
