@@ -6,7 +6,9 @@ public class Sword : MonoBehaviour
 {
     public int damage = 10;  
     public float attackCooldown = 1f;
+    public AudioSource audioSource;
     private float lastAttackTime;  
+
 
     [SerializeField] private Collider2D swordCollider; 
 
@@ -20,8 +22,12 @@ public class Sword : MonoBehaviour
     // Gọi khi nhấn nút tấn công
     public void OnAttackButtonClicked()
     {
+        
         if (Time.time >= lastAttackTime + attackCooldown)
         {
+            Player player = FindObjectOfType<Player>();
+            player.animator.SetBool("Melee", true);
+            audioSource.Play();
             StartCoroutine(PerformAttack());
             lastAttackTime = Time.time;  
         }

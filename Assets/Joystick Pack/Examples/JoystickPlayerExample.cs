@@ -11,27 +11,35 @@ public class JoystickPlayerExample : MonoBehaviour
     public Vector2 direction;
     public Collider2D movementBounds;
     public Transform helicopterTransform; 
-    public float maxDistanceFromHelicopter = 10f; 
-
+    public float maxDistanceFromHelicopter = 10f;
+    public bool isDead = false;
 
     private void FixedUpdate()
     {
-        
-        direction = Vector2.up * variableJoystick.Vertical + Vector2.right * variableJoystick.Horizontal;
+        if (!isDead)
+        {
+            direction = Vector2.up * variableJoystick.Vertical + Vector2.right * variableJoystick.Horizontal;
 
-        
-        rb.velocity = direction.normalized * speed;
-        if (direction != Vector2.zero)
-        {
-            Vector3 localScale = transform.localScale;
-            localScale.x = direction.x > 0 ? Mathf.Abs(localScale.x) : -Mathf.Abs(localScale.x);
-            transform.localScale = localScale;
+
+            rb.velocity = direction.normalized * speed;
+            if (direction != Vector2.zero)
+            {
+                Vector3 localScale = transform.localScale;
+                localScale.x = direction.x > 0 ? Mathf.Abs(localScale.x) : -Mathf.Abs(localScale.x);
+                transform.localScale = localScale;
+            }
+            if (helicopterTransform != null)
+            {
+                LimitPlayerDistanceFromHelicopter();
+            }
+            ClampPlayerWithinBounds();
         }
-        if (helicopterTransform != null)
+        else
         {
-            LimitPlayerDistanceFromHelicopter();
+            rb.velocity = Vector2.zero;
         }
-        ClampPlayerWithinBounds();
+
+
     }
 
     private void LimitPlayerDistanceFromHelicopter()

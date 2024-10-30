@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5996788770222469854}
   - component: {fileID: 7095672869682888397}
   - component: {fileID: 8251370349553050257}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Chopper
   m_TagString: Helicopter
   m_Icon: {fileID: 0}
@@ -394,3 +394,4 @@ MonoBehaviour:
   animator: {fileID: 1293197641823750139}
   isComplete: 0
   audioSource: {fileID: 5996788770222469854}
+  invulnerabilityDuration: 2

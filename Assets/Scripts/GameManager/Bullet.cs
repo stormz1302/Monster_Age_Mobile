@@ -6,11 +6,9 @@ public class Bullet : MonoBehaviour
 {
     private int damage;
     private Weapon weapon;
-
+    public GameObject hitEffect;
     public bool isPlayerBullet;
-    public float pushForce = 5f;
-    public float maxPushDistance = 3f;
-    public AudioSource audioSource;
+
     private bool bulletOfSniper;
     private int enemyHitCount = 0;  
 
@@ -49,21 +47,8 @@ public class Bullet : MonoBehaviour
 
     private void HandleEnemyHit(Collider2D collision)
     {
-        Rigidbody2D targetRb = collision.GetComponent<Rigidbody2D>();
-        audioSource.Play();
-
-        if (targetRb != null)
-        {
-            Vector2 pushDirection = collision.transform.position - transform.position;
-            pushDirection.Normalize();
-
-            Vector2 force = pushDirection * Mathf.Clamp(pushForce, 0, maxPushDistance);
-            targetRb.AddForce(force, ForceMode2D.Impulse);
-            targetRb.velocity = Vector2.ClampMagnitude(targetRb.velocity, 2f);
-        }
-
         collision.GetComponent<EnemyHealth>().TakeDamage(damage);
-
+        BloodEffect();
         if (bulletOfSniper)
         {
             enemyHitCount++;  
@@ -76,5 +61,12 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);  
         }
+    }
+
+    private void BloodEffect()
+    {
+        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        effect.transform.rotation = transform.rotation;
+        Destroy(effect, 0.5f);
     }
 }

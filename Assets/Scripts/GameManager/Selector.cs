@@ -48,8 +48,8 @@ public class Selector : MonoBehaviour
 
     public void EquipWeapon(int weaponIndex, int WeaponSlot)
     {
-        bool isOwned = weapons[weaponIndex].isOwned;
         WeaponData weapon = weapons[weaponIndex];
+        bool isOwned = weapon.isOwned;
         if (isOwned)
         {
             PlayerPrefs.SetInt("_EquipWeapon" + WeaponSlot, weaponIndex);

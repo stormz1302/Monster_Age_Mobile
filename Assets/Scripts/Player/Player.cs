@@ -45,7 +45,6 @@ public class Player : MonoBehaviour
 
     public void AttackMelee()
     {
-        animator.SetBool("Melee", true);
         Sword sword = FindObjectOfType<Sword>();
         sword.OnAttackButtonClicked();
     }
@@ -90,6 +89,8 @@ public class Player : MonoBehaviour
 
     public void CollectItem(Item item)
     {
+        ItemManager itemManager = FindObjectOfType<ItemManager>();
+        itemManager.PlaySound();
         switch (item.itemType)
         {
             case Item.ItemType.Health:

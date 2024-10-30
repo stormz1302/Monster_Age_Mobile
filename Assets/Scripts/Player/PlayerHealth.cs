@@ -29,6 +29,9 @@ public class PlayerHealth : MonoBehaviour
     {
         if (safeTimeCooldown <= 0)
         {
+            Handheld.Vibrate();
+            DamageEffect damageEffect = FindObjectOfType<DamageEffect>();
+            StartCoroutine(damageEffect.ShowDamageFlash());
             currentHealth -= damage;
             animator.SetTrigger("Hurt");
             if (currentHealth <= 0)
@@ -36,6 +39,8 @@ public class PlayerHealth : MonoBehaviour
                 currentHealth = 0;
                 //animator.SetBool("isDead", true);
                 //Die();
+                JoystickPlayerExample joystick = FindObjectOfType<JoystickPlayerExample>();
+                joystick.isDead = true;
                 StartCoroutine(WaitForAnimation());
             }
             healthbar.UpdateHealth(currentHealth, maxHealth);
@@ -57,7 +62,8 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator WaitForAnimation()
     {
         animator.SetBool("isDead", true);
-        yield return new WaitForSeconds(2f);
+
+        yield return new WaitForSeconds(1.3f);
         Die();
     }
     private void Die()

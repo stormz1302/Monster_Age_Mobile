@@ -14,7 +14,7 @@ public class EnemyAi : MonoBehaviour
 
     public Seeker seeker;
     public bool updateContinuesPath;
-
+    public bool canMove; 
     public bool isShootable;
     public GameObject bullet;
     public float bulletSpeed;
@@ -30,6 +30,7 @@ public class EnemyAi : MonoBehaviour
 
     private void Start()
     {
+        canMove = true;
         loneSurvivor = FindObjectOfType<LoneSurvivor>();
         if (!roaming) InvokeRepeating("CalculatePath", 0f, 0.5f);
 
@@ -39,14 +40,15 @@ public class EnemyAi : MonoBehaviour
 
     private void Update()
     {
+        if (!canMove) return;
         shootCooldown -= Time.deltaTime;
         if (shootCooldown < 0 && isShootable)
         {
             shootCooldown = shootRate;
             EnemyShoot();
-            
+
         }
-        
+
         float currentSpeed = ((Vector2)transform.position - previousPosition).magnitude / Time.deltaTime;
 
         previousPosition = transform.position;
@@ -60,7 +62,6 @@ public class EnemyAi : MonoBehaviour
                 CalculatePath();
             }
         }
-        
     }
 
     void EnemyShoot()
@@ -114,6 +115,7 @@ public class EnemyAi : MonoBehaviour
         reachDestination = false;
         while (currentWaypoint < path.vectorPath.Count)
         {
+            if (!canMove) yield break;
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - (Vector2)transform.position).normalized;
             Vector2 force = direction * moveSpeed * Time.deltaTime;
             transform.position += (Vector3)force;

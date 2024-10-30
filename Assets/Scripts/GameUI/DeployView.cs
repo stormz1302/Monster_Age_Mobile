@@ -10,7 +10,7 @@ public class DeployView : MonoBehaviour
     [SerializeField] private TMP_Text weaponDamageText; // Gán từ prefab
     [SerializeField] private Image weaponImage; // Gán từ prefab
     [SerializeField] private Button Equip; // Gán từ prefab
-    [SerializeField] private Button UnEquip; // Gán từ prefab
+    [SerializeField] private GameObject Equiped; // Gán từ prefab
     [SerializeField] private Image levelWeapons;
     [SerializeField] private Sprite[] levelSprites;
     private int weaponIndex; // Chỉ số vũ khí
@@ -33,12 +33,12 @@ public class DeployView : MonoBehaviour
         if (isEquipped)
         {
             Equip.gameObject.SetActive(false);
-            UnEquip.gameObject.SetActive(true);
+            Equiped.SetActive(true);
         }
         else
         {
             Equip.gameObject.SetActive(true);
-            UnEquip.gameObject.SetActive(false);
+            Equiped.SetActive(false);
         }
         Level = weapon.Level;
         switch (Level)
@@ -59,12 +59,6 @@ public class DeployView : MonoBehaviour
     }
 
     public void EquipWeapon()
-    {
-        deployWeapons.DisplayWeaponSlot(weaponIndex);
-        deployWeapons.DisplayDeployWeapons();
-    }
-
-    public void UnEquipWeapon()
     {
         deployWeapons.DisplayWeaponSlot(weaponIndex);
         deployWeapons.DisplayDeployWeapons();

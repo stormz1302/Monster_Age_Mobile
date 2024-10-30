@@ -229,10 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162ff1947600e7640b3287a409d887aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 7580193571841400120, guid: ce8fc883f76c9064cbeb06fe4caf1127, type: 3}
   isPlayerBullet: 1
-  pushForce: 5
-  maxPushDistance: 1.5
-  audioSource: {fileID: 2712263008049503559}
 --- !u!82 &2712263008049503559
 AudioSource:
   m_ObjectHideFlags: 0

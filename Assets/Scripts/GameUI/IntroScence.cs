@@ -6,6 +6,8 @@ public class IntroScence : MonoBehaviour
 {
     [SerializeField] private GameObject Menu ;
     bool firstLoad;
+    [SerializeField] private GameObject lightningEffect;
+    float LightnigTime = 2f;
 
 
     private void Start()
@@ -25,7 +27,17 @@ public class IntroScence : MonoBehaviour
             GameReady();
             Debug.Log("Open Menu");
         }
+        InvokeRepeating("LightningEffect", 0.5f, 8f);
+    }
 
+    private void Update()
+    {
+        LightnigTime -= Time.deltaTime;
+        if (LightnigTime <= 0)
+        {
+            lightningEffect.SetActive(false);
+            LightnigTime = 2f;
+        }
     }
 
     public void QuitGame()
@@ -47,4 +59,10 @@ public class IntroScence : MonoBehaviour
     {
         Menu.SetActive(true);
     }
+
+    private void LightningEffect()
+    {
+        lightningEffect.SetActive(true);
+    }
+
 }

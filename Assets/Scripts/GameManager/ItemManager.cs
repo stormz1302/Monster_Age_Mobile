@@ -6,11 +6,12 @@ public class ItemManager : MonoBehaviour
     public static ItemManager Instance; 
     public GameObject[] itemPrefabs; 
     public float spawnChance = 0.2f; 
-    private int enemyKillCounter = 0; 
+    private int enemyKillCounter = 0;
+    AudioSource audioSource;
 
     private void Awake()
     {
-        
+        audioSource = GetComponent<AudioSource>();
         if (Instance == null)
         {
             Instance = this;
@@ -37,6 +38,11 @@ public class ItemManager : MonoBehaviour
     {
         int randomIndex = Random.Range(0, itemPrefabs.Length);
         Instantiate(itemPrefabs[randomIndex], position, Quaternion.identity); 
+    }
+
+    public void PlaySound()
+    {
+        audioSource.Play();
     }
 
 }

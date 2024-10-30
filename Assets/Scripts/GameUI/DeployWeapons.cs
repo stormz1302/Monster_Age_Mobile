@@ -105,39 +105,17 @@ public class DeployWeapons : MonoBehaviour
         switch (SelectWeaponSlot)
         {
             case 1:
-                
-                if (!isEquipped)
-                {
-                    WeaponSlot1.sprite = weapon.icon;
-                    WeaponSlot1.color = new Color(1, 1, 1, 1);
-                    selector.EquipWeapon(weaponIndex, SelectWeaponSlot);
-                }
-                else
-                {
-                    WeaponSlot1.sprite = null;
-                    WeaponSlot1.color = new Color(1,1,1,0);
-                    selector.UnequipWeapon(SelectWeaponSlot, weaponIndex);
-                }
-                    
+                WeaponSlot1.sprite = weapon.icon;
+                WeaponSlot1.color = new Color(1, 1, 1, 1);
+                selector.EquipWeapon(weaponIndex, SelectWeaponSlot);
                 break;
             case 2:
-                if (!isEquipped)
-                {
-                    WeaponSlot2.sprite = weapon.icon;
-                    WeaponSlot2.color = new Color(1, 1, 1, 1);
-                    selector.EquipWeapon(weaponIndex, SelectWeaponSlot);
-                }
-                else
-                {
-                    WeaponSlot2.sprite = null;
-                    WeaponSlot2.color = new Color(1, 1, 1, 0);
-                    selector.UnequipWeapon(SelectWeaponSlot, weaponIndex);
-                }
+                WeaponSlot2.sprite = weapon.icon;
+                WeaponSlot2.color = new Color(1, 1, 1, 1);
+                selector.EquipWeapon(weaponIndex, SelectWeaponSlot);
                 break;
         }
     }
-
-    
 
     public void SelectWeaponSlot1(int weaponSlot)
     {
@@ -162,5 +140,18 @@ public class DeployWeapons : MonoBehaviour
     public void QuitDeployWeapons()
     {
         Deploy.SetActive(false);
+    }
+
+    public void SwitchWeaponSlots()
+    {
+        int weaponIndex1 = PlayerPrefs.GetInt("_EquipWeapon1", -1);
+        int weaponIndex2 = PlayerPrefs.GetInt("_EquipWeapon2", -1);
+
+        // Hoán đổi vị trí hai vũ khí
+        PlayerPrefs.SetInt("_EquipWeapon1", weaponIndex2);
+        PlayerPrefs.SetInt("_EquipWeapon2", weaponIndex1);
+
+        // Cập nhật giao diện
+        LoadWeaponSlot();
     }
 }

@@ -62,11 +62,16 @@ public class GameManager : MonoBehaviour
         GameObject characterPrefab = characters[characterIndex];
         GameObject instantiatedCharacter = Instantiate(characterPrefab, player.position, Quaternion.identity);
         instantiatedCharacter.transform.SetParent(player);
+        
+        SetPlayer(instantiatedCharacter);
+    }
+
+    private void SetPlayer(GameObject instantiatedCharacter)
+    {
         Player Player = player.GetComponent<Player>();
         PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
         playerHealth.animator = instantiatedCharacter.GetComponent<Animator>();
         Player.animator = instantiatedCharacter.GetComponent<Animator>();
-
     }
 
     private void InstantiateWeapon(int weaponIndex)
