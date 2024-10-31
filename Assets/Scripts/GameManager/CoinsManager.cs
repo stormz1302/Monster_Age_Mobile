@@ -6,8 +6,7 @@ using TMPro;
 public class CoinsManager : MonoBehaviour
 {
     private const string COIN_KEY = "PlayerCurrency";
-    [SerializeField] private TMP_Text coinsText;
-    [SerializeField] private TMP_Text coinsTextShop;
+
 
     public void Start()
     {
@@ -16,10 +15,6 @@ public class CoinsManager : MonoBehaviour
             SaveCoins(100000);
     }
 
-    private void Update()
-    {
-        CoinsDisplay();
-    }
     
     public void SaveCoins(int coins)
     {
@@ -47,10 +42,5 @@ public class CoinsManager : MonoBehaviour
         SaveCoins(currentCoins);
     }
 
-    private void CoinsDisplay()
-    {
-        int coins = LoadCoins();
-        coinsText.text = coins.ToString();
-        coinsTextShop.text = coins.ToString();
-    }
+   
 }

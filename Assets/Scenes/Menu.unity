@@ -9417,11 +9417,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1259578776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1d73c742d185184bb7aa6b698265ca1, type: 3}
+  m_Script: {fileID: 11500000, guid: 254b763a1d3bed04b849adc64a73930c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinsText: {fileID: 766263832}
-  coinsTextShop: {fileID: 1683800443}
+  coinsText: {fileID: 0}
+  coinsTextShop: {fileID: 0}
 --- !u!1 &1269469017
 GameObject:
   m_ObjectHideFlags: 0
@@ -13924,6 +13924,7 @@ GameObject:
   - component: {fileID: 1951353714}
   - component: {fileID: 1951353713}
   - component: {fileID: 1951353712}
+  - component: {fileID: 1951353716}
   m_Layer: 0
   m_Name: EndScreen
   m_TagString: Untagged
@@ -14039,6 +14040,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &1951353716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951353710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d73c742d185184bb7aa6b698265ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1952178246
 GameObject:
   m_ObjectHideFlags: 0

@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc4b1d4b4368204d94f06f8f17b727b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTime: 300
+  levelTime: 10
   timerText: {fileID: 220540280}
 --- !u!1 &93213884
 GameObject:
@@ -11272,7 +11272,7 @@ MonoBehaviour:
   MeleeTime: 0.25
   dashCooldown: 1.5
   isDashing: 0
-  dashSpeed: 50
+  dashSpeed: 16
   dashTime: 0.4
   CharacterName: 
 --- !u!4 &8008223126483916840

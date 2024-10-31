@@ -22,8 +22,10 @@ public class EndScreen : MonoBehaviour
     [SerializeField] private GameObject TaskView;
     [SerializeField] private GameObject TaskDone;
     private int taskIndex;
+    bool missionState;
     private string keyToDelete = "_FirstLoad";
     int bonusCoins ;
+    int rewardCoins;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -36,28 +38,30 @@ public class EndScreen : MonoBehaviour
         DontDestroyOnLoad(gameObject); // Ensure this instance persists across scenes
     }
 
-    private void DisplayMission(int taskIndex)
+    private void DisplayMission(int taskIndex, bool missionState)
     {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        bonusCoins = gameManager.bonusCoins;
         int mapLevel = PlayerPrefs.GetInt("SceneIndex") + 1;
         MapLevel.text = "Level: " + mapLevel.ToString();
 
         TaskData task = taskList.tasks[taskIndex];
         Title.text = "Title: " + task.taskName;
         Description.text = "Description: " + task.taskDescription;
-        bool isCompleted = task.isCompleted;
+        bool isCompleted = missionState;
         Debug.Log("Complete: " + isCompleted);
         if (isCompleted)
         {
             TaskCompleted.text = "Mission Completed";
-            GameManager gameManager = FindObjectOfType<GameManager>();
-            bonusCoins = gameManager.bonusCoins;
-            StartCoroutine(CountUpCoroutine(task.taskReward + bonusCoins));
+            rewardCoins = task.taskReward + bonusCoins;
+            StartCoroutine(CountUpCoroutine(rewardCoins));
             StateImage.sprite = completed;
         }
         else
         {
             TaskCompleted.text = "Mission Failed";
-            TaskReward.text = "Reward: $0";
+            rewardCoins = bonusCoins;
+            StartCoroutine(CountUpCoroutine(rewardCoins));
             StateImage.sprite = incomplete;
         }
     }
@@ -85,12 +89,14 @@ public class EndScreen : MonoBehaviour
         if (isCompleted)
         {
             Noti.text = "Mission Completed!";
+            missionState = true;
             taskList.tasks[taskIndex].isCompleted = true;
             PlayerPrefs.SetInt(taskList.tasks[taskIndex].taskName, 1);
             PlayerPrefs.Save();
         }
         else
         {
+            missionState = false;
             Noti.text = "Mission Failed!";
         }
     }
@@ -101,7 +107,7 @@ public class EndScreen : MonoBehaviour
         {
             TaskView.SetActive(true);
             TaskDone.SetActive(false);
-            DisplayMission(taskIndex);
+            DisplayMission(taskIndex, missionState);
         }
         else
         {
@@ -113,6 +119,8 @@ public class EndScreen : MonoBehaviour
     {
         Time.timeScale = 1f;
         TaskView.SetActive(false);
+        CoinsManager coinsManager = FindObjectOfType<CoinsManager>();
+        coinsManager.AddCoins(rewardCoins);
         PlayerPrefs.SetString("NextScene", "Menu");
         PlayerPrefs.Save();
         SceneManager.LoadScene("Loading");
