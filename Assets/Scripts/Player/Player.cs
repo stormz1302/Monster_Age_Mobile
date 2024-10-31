@@ -90,15 +90,22 @@ public class Player : MonoBehaviour
     public void CollectItem(Item item)
     {
         ItemManager itemManager = FindObjectOfType<ItemManager>();
-        itemManager.PlaySound();
+        
         switch (item.itemType)
         {
             case Item.ItemType.Health:
                 PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+                itemManager.PlaySound(0);
                 playerHealth.Heal(item.value);
                 break;
             case Item.ItemType.Ammo:
+                itemManager.PlaySound(1);
                 weaponManager.AddAmmo(item.value);
+                break;
+            case Item.ItemType.Coin:
+                itemManager.PlaySound(2);
+                GameManager gameManager = FindObjectOfType<GameManager>();
+                gameManager.AddCoins(item.value);
                 break;
         }
     }

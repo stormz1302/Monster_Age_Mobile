@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   value: 20
+  spawnWeight: 0.2

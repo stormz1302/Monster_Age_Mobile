@@ -16,6 +16,9 @@ public class CharacterAI : MonoBehaviour
 
     private float nextFireTime = 0f;     
     private Rigidbody2D rb;
+    public AudioSource audioSource;
+    public float searchRadius;
+    public Animator animator;
 
     void Start()
     {
@@ -47,20 +50,24 @@ public class CharacterAI : MonoBehaviour
             Vector2 moveDir = (player.position - transform.position).normalized;
             rb.MovePosition(rb.position + moveDir * moveSpeed * Time.deltaTime);
         }
+        float speed = rb.velocity.magnitude ;
+        animator.SetFloat("Speed", speed);
     }
 
     Transform FindClosestEnemy()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         Transform closest = null;
-        float minDistance = Mathf.Infinity;
+        float minDistanceSqr = searchRadius * searchRadius; 
 
         foreach (GameObject enemy in enemies)
         {
-            float distance = Vector2.Distance(transform.position, enemy.transform.position);
-            if (distance < minDistance)
+            Vector2 directionToEnemy = enemy.transform.position - transform.position;
+            float distanceSqr = directionToEnemy.sqrMagnitude;
+
+            if (distanceSqr < minDistanceSqr)
             {
-                minDistance = distance;
+                minDistanceSqr = distanceSqr;
                 closest = enemy.transform;
             }
         }
@@ -81,7 +88,11 @@ public class CharacterAI : MonoBehaviour
 
     void Shoot(Vector2 direction)
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        audioSource.Play();
+        animator.SetTrigger("Fire");
+        float randomYOffset = Random.Range(-0.3f, 0.3f); 
+        Vector3 spawnPosition = firePoint.position + new Vector3(0, randomYOffset, 0); 
+        GameObject bullet = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
     }
 }

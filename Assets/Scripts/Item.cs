@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public enum ItemType { Health, Ammo } 
+    public enum ItemType { Health, Ammo, Coin} 
     public ItemType itemType;                      
-    public int value = 1;                          
+    public int value = 1;
+    public float spawnWeight;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,6 +20,14 @@ public class Item : MonoBehaviour
                 Destroy(gameObject); 
                 Debug.Log("Item collected");
             }
+        }
+    }
+
+    private void Start()
+    {
+        if (itemType == ItemType.Coin)
+        {
+            value = Random.Range(10, 25);
         }
     }
 }

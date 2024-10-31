@@ -1,0 +1,800 @@
+fileFormatVersion: 2
+guid: a81aa9c2da08fc641ae595530df6cd34
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2250
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509113b2f142cc1458388fbcdb7a77de
+      internalID: -1458154790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2250
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2d9ee9e11e6d84fb607797713d9059
+      internalID: -1172489858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2250
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7debeeed228b013459e4a36e09448232
+      internalID: -1315935568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_3
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2250
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f36693b5eb29e04dbf0bb2ee5ab59b7
+      internalID: 2119404462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_4
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2250
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e83f2dcb07ef18a4b9a31c18436ea99e
+      internalID: 364389797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1800
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32ff05bd0c286b43b45ae19cafc5814
+      internalID: 1564233920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1800
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7b82961fdca1144901ba5d0a0e93c4
+      internalID: -1163112370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_7
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1800
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a06f0b0b5f082c47b1b7b1ba2bcdbb7
+      internalID: 320066207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_8
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1800
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 790a259a4b2b35441b873dafae1effc9
+      internalID: -1229778096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_9
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1800
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0cdeede9a7132149b1cb144ef777ee1
+      internalID: 2144608992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1350
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342f322bfc0ad0c4c80621bee35f636f
+      internalID: -1183056246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_11
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1350
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef4abca1996bc0439713538e32f1d91
+      internalID: 1376944057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_12
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1350
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc96844328c5ea45bc279a328cfe336
+      internalID: 58075960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_13
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1350
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5563f6a6168e59240821dceed99c408d
+      internalID: 523579693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_14
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1350
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3f1ca01c16a6f429088f05e7869559
+      internalID: -1225059437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9556a64c5d7d4134aa9b9622f705433b
+      internalID: -15305587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_16
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 900
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d69c7e5cf5847424aa814e06029dd5e1
+      internalID: -2122276796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_17
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 900
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a26ef2ba7ae5d6478acd34192426b14
+      internalID: -519814699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_18
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 900
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9fc8c35045b9b4d83713ae3878efe3
+      internalID: 33790238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_19
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 900
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e1b6774bdba2848a4b461a0e8ea8f3
+      internalID: 1565264392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 450
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 813eda351bc1953428c7691eff1f4659
+      internalID: 1350936308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_21
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 450
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c5c457de0860f54185635fcc7e6cdf8
+      internalID: -444602086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_22
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 450
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc36738a2242f8d4bb57d4308b5cf376
+      internalID: -1619684516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_23
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 450
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e2ac2d984f03249a418bbfc9db7e13
+      internalID: -1636113302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_24
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 450
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed3cfab91170c34da87fc00cc20f044
+      internalID: -1282682383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc0878bda0cf3974995d20f58d3bf64c
+      internalID: -799519324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_26
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4399f352e3379a042ad1b33ab19eed04
+      internalID: -387230805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_27
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8ad370d4a38144fb334733c8d49966
+      internalID: -792416900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_28
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e40254cefa01947ab3a83fded3a475
+      internalID: 390837242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins-ezgif.com-gif-to-sprite-converter (1)_29
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d304ef0eb48ae684185a77db78a4d3a5
+      internalID: -2000553432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      coins-ezgif.com-gif-to-sprite-converter (1)_0: -1458154790
+      coins-ezgif.com-gif-to-sprite-converter (1)_1: -1172489858
+      coins-ezgif.com-gif-to-sprite-converter (1)_10: -1183056246
+      coins-ezgif.com-gif-to-sprite-converter (1)_11: 1376944057
+      coins-ezgif.com-gif-to-sprite-converter (1)_12: 58075960
+      coins-ezgif.com-gif-to-sprite-converter (1)_13: 523579693
+      coins-ezgif.com-gif-to-sprite-converter (1)_14: -1225059437
+      coins-ezgif.com-gif-to-sprite-converter (1)_15: -15305587
+      coins-ezgif.com-gif-to-sprite-converter (1)_16: -2122276796
+      coins-ezgif.com-gif-to-sprite-converter (1)_17: -519814699
+      coins-ezgif.com-gif-to-sprite-converter (1)_18: 33790238
+      coins-ezgif.com-gif-to-sprite-converter (1)_19: 1565264392
+      coins-ezgif.com-gif-to-sprite-converter (1)_2: -1315935568
+      coins-ezgif.com-gif-to-sprite-converter (1)_20: 1350936308
+      coins-ezgif.com-gif-to-sprite-converter (1)_21: -444602086
+      coins-ezgif.com-gif-to-sprite-converter (1)_22: -1619684516
+      coins-ezgif.com-gif-to-sprite-converter (1)_23: -1636113302
+      coins-ezgif.com-gif-to-sprite-converter (1)_24: -1282682383
+      coins-ezgif.com-gif-to-sprite-converter (1)_25: -799519324
+      coins-ezgif.com-gif-to-sprite-converter (1)_26: -387230805
+      coins-ezgif.com-gif-to-sprite-converter (1)_27: -792416900
+      coins-ezgif.com-gif-to-sprite-converter (1)_28: 390837242
+      coins-ezgif.com-gif-to-sprite-converter (1)_29: -2000553432
+      coins-ezgif.com-gif-to-sprite-converter (1)_3: 2119404462
+      coins-ezgif.com-gif-to-sprite-converter (1)_4: 364389797
+      coins-ezgif.com-gif-to-sprite-converter (1)_5: 1564233920
+      coins-ezgif.com-gif-to-sprite-converter (1)_6: -1163112370
+      coins-ezgif.com-gif-to-sprite-converter (1)_7: 320066207
+      coins-ezgif.com-gif-to-sprite-converter (1)_8: -1229778096
+      coins-ezgif.com-gif-to-sprite-converter (1)_9: 2144608992
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

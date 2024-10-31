@@ -67,7 +67,7 @@ public class WeaponManager : MonoBehaviour
         animator = GetComponent<Animator>();
         FireSound = GetComponent<AudioSource>();
 
- 
+        SwitchWeapon(1);
 
         CheckWeaponType();
     }
@@ -125,22 +125,7 @@ public class WeaponManager : MonoBehaviour
     // Function fire weapon
     private void FireBullet(Quaternion rotation)
     {
-        if (_Fire == Sniper) // Chỉ trừ đạn sau khi bắn Sniper
-        {
-            if (currentWeapon == weaponSlot1)
-            {
-                Ammo1 -= 1;
-                weaponsUI.currentAmmo1 = Ammo1;
-            }
-            else if (currentWeapon == weaponSlot2)
-            {
-                Ammo2 -= 1;
-                weaponsUI.currentAmmo2 = Ammo2;
-            }
-            Ammo -= 1;
-            weaponsUI.UpdateAmmoUI();
-        }
-
+        animator.SetTrigger("Fire");
         nextFireTime = Time.time + fireRate;
         FireSound.Play(); // Phát âm thanh bắn đạn
         Quaternion fProtaion = Quaternion.Euler(0, 0, 0);
@@ -170,7 +155,18 @@ public class WeaponManager : MonoBehaviour
     {
         if (Time.time >= nextFireTime)
         {
-            
+            if (currentWeapon == weaponSlot1)
+            {
+                Ammo1 -= 1;
+                weaponsUI.currentAmmo1 = Ammo1;
+            }
+            else if (currentWeapon == weaponSlot2)
+            {
+                Ammo2 -= 1;
+                weaponsUI.currentAmmo2 = Ammo2;
+            }
+
+            Ammo -= 1;
             float startAngle = -12.5f;
             for (int i = 0; i < 5; i++)
             {
@@ -197,7 +193,18 @@ public class WeaponManager : MonoBehaviour
     {
         if (Time.time >= nextFireTime)
         {
-            
+            if (currentWeapon == weaponSlot1)
+            {
+                Ammo1 -= 1;
+                weaponsUI.currentAmmo1 = Ammo1;
+            }
+            else if (currentWeapon == weaponSlot2)
+            {
+                Ammo2 -= 1;
+                weaponsUI.currentAmmo2 = Ammo2;
+            }
+
+            Ammo -= 1;
             Quaternion rotation = Quaternion.Euler(0, 0, 0);
             FireBullet(rotation);
         }
@@ -266,34 +273,22 @@ public class WeaponManager : MonoBehaviour
     {
 
 
-        if (Ammo > 0 || _Fire == Sniper) // Sniper vẫn có thể bắn lần đầu nếu có đạn
+        if (Ammo > 0 || _Fire == Sniper) 
         {
-            if (_Fire != Sniper && currentWeapon == weaponSlot1)
-            {
-                Ammo1 -= 1;
-                weaponsUI.currentAmmo1 = Ammo1;
-            }
-            else if (_Fire != Sniper && currentWeapon == weaponSlot2)
-            {
-                Ammo2 -= 1;
-                weaponsUI.currentAmmo2 = Ammo2;
-            }
-
-            Ammo -= 1;
+            
 
             if (_Fire != null)
             {
                 if (_Fire != Sniper && Time.time >= nextFireTime)
                 {
                     Firing = true;
-                    animator.SetTrigger("Fire");
-                    StartCoroutine(FireRepeatedly()); // Bắt đầu bắn liên tục nếu không phải Sniper
+                    StartCoroutine(FireRepeatedly()); 
                 }
                 else if (_Fire == Sniper)
                 {
                     holdGun = true;
                     holdGunTime = Time.time + 1f;
-                    _Fire(); // Bắn một lần cho Sniper
+                    _Fire(); 
                 }
                 Debug.Log("Fire1");
             }

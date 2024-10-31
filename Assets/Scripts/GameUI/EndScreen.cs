@@ -23,6 +23,7 @@ public class EndScreen : MonoBehaviour
     [SerializeField] private GameObject TaskDone;
     private int taskIndex;
     private string keyToDelete = "_FirstLoad";
+    int bonusCoins ;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -48,7 +49,9 @@ public class EndScreen : MonoBehaviour
         if (isCompleted)
         {
             TaskCompleted.text = "Mission Completed";
-            StartCoroutine(CountUpCoroutine(task.taskReward));
+            GameManager gameManager = FindObjectOfType<GameManager>();
+            bonusCoins = gameManager.bonusCoins;
+            StartCoroutine(CountUpCoroutine(task.taskReward + bonusCoins));
             StateImage.sprite = completed;
         }
         else
