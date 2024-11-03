@@ -16,11 +16,11 @@ public class DeployView : MonoBehaviour
     private int weaponIndex; // Chỉ số vũ khí
     private int Level; // Số cấp độ tối đa
     private DeployWeapons deployWeapons;
-    private Selector selector;
 
     private void Start()
     {
         deployWeapons = FindObjectOfType<DeployWeapons>();
+
     }
 
     public void SetWeaponOwnedInfo(WeaponData weapon, int weaponIndex)
@@ -57,6 +57,8 @@ public class DeployView : MonoBehaviour
                 break;
         }
     }
+
+    
 
     public void EquipWeapon()
     {

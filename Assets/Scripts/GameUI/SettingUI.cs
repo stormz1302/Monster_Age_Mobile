@@ -21,7 +21,6 @@ public class SettingUI : MonoBehaviour
 
     void Start()
     {
-        // Đặt giá trị của Slider theo giá trị hiện tại của AudioMixer
         SetSliderValue(soundsMixer, soundsSlider);
         SetSliderValue(musicMixer, musicSlider);
     }
@@ -30,13 +29,12 @@ public class SettingUI : MonoBehaviour
     {
         float currentVolume;
         mixer.GetFloat("Volume", out currentVolume);
-        slider.value = Mathf.InverseLerp(-80f, 0f, currentVolume); // Chuyển đổi dB thành giá trị từ 0 đến 1
+        slider.value = Mathf.InverseLerp(-80f, 0f, currentVolume); 
     }
 
     public void OnSoundsSliderValueChanged(float value)
     {
         value = soundsSlider.value;
-        // Chuyển đổi giá trị từ 0-1 thành dB và thiết lập âm lượng cho Sounds
         float volume = Mathf.Lerp(-80f, 0f, value);
         soundsMixer.SetFloat("Volume", volume);
     }
@@ -44,7 +42,6 @@ public class SettingUI : MonoBehaviour
     public void OnMusicSliderValueChanged(float value)
     {
         value = musicSlider.value;
-        // Chuyển đổi giá trị từ 0-1 thành dB và thiết lập âm lượng cho Music
         float volume = Mathf.Lerp(-80f, 0f, value);
         musicMixer.SetFloat("Volume", volume);
     }

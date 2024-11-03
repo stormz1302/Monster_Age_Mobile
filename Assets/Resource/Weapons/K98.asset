@@ -19,6 +19,6 @@ MonoBehaviour:
   Damage: 150
   Clip: 50
   Level: 0
-  isEquipped: 0
-  isOwned: 0
+  isEquipped: 1
+  isOwned: 1
   prefab: {fileID: 8730699376047327383, guid: e0299efcd571fa7489b44d0d453d627b, type: 3}

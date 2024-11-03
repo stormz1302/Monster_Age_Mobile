@@ -140,4 +140,18 @@ public class EndScreen : MonoBehaviour
         PlayerPrefs.DeleteKey(keyToDelete);
         PlayerPrefs.Save();
     }
+    private void OnApplicationPause(bool pauseState)
+    {
+        int firstLoad = PlayerPrefs.GetInt(keyToDelete, 1);
+        if (pauseState)
+        {
+            PlayerPrefs.DeleteKey(keyToDelete);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            PlayerPrefs.SetInt(keyToDelete, firstLoad);
+            PlayerPrefs.Save();
+        }
+    }
 }

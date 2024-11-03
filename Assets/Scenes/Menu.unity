@@ -4842,7 +4842,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2220, y: 1080}
+  m_SizeDelta: {x: 2560, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &685183683
 MonoBehaviour:
@@ -9420,8 +9420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254b763a1d3bed04b849adc64a73930c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinsText: {fileID: 0}
-  coinsTextShop: {fileID: 0}
+  coinsText: {fileID: 766263832}
+  coinsTextShop: {fileID: 1683800443}
 --- !u!1 &1269469017
 GameObject:
   m_ObjectHideFlags: 0
@@ -10071,7 +10071,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 925, y: 450}
+  m_SizeDelta: {x: 1080, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1369814199
 MonoBehaviour:

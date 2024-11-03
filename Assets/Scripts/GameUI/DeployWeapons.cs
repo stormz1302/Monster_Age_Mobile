@@ -75,6 +75,23 @@ public class DeployWeapons : MonoBehaviour
                 WeaponSlot1.color = new Color(1, 1, 1, 0);
             }
         }
+        else
+        {
+            foreach (var weapon in weapons)
+            {
+                if (weapon.isEquipped)
+                {
+                    weaponIndex1 = weapons.IndexOf(weapon);
+                    PlayerPrefs.SetInt("_EquipWeapon1", weaponIndex1);
+                    PlayerPrefs.Save();
+                    WeaponSlot1.sprite = weapons[weaponIndex1].icon;
+                    WeaponSlot1.color = new Color(1, 1, 1, 1);
+                    break;
+                }
+ 
+            }
+        }
+
         if (weaponIndex2 != -1)
         {
             bool isEquipped = weapons[weaponIndex2].isEquipped;
@@ -87,6 +104,22 @@ public class DeployWeapons : MonoBehaviour
             {
                 WeaponSlot2.sprite = null;
                 WeaponSlot2.color = new Color(1, 1, 1, 0);
+            }
+        }
+        else
+        {
+            foreach (var weapon in weapons)
+            {
+                if (weapon.isEquipped && weapons.IndexOf(weapon) != weaponIndex1)
+                {
+                    weaponIndex2 = weapons.IndexOf(weapon);
+                    PlayerPrefs.SetInt("_EquipWeapon2", weaponIndex2);
+                    PlayerPrefs.Save();
+                    WeaponSlot2.sprite = weapons[weaponIndex2].icon;
+                    WeaponSlot2.color = new Color(1, 1, 1, 1);
+                    break;
+                }
+
             }
         }
     }
